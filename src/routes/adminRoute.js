@@ -1,4 +1,5 @@
 const express=require("express");
+const Authordata = require("../model/Authordata");
 const adminRouters=express.Router();
 
 
@@ -10,8 +11,17 @@ function router(nav){
         })
     })
 
-    adminRouters.get("/add",function(req,res){
-        res.send("added");
+    adminRouters.post("/added",function(req,res){
+        var item={
+           
+            author:req.body.author,
+            
+            image:req.body.image
+        }
+         var author=Authordata(item);
+         author.save();
+         res.redirect("/authors")    
+         
             
         
     });

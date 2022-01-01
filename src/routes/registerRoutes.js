@@ -1,8 +1,8 @@
 const express=require("express");
 const registerRouter=express.Router();
-const bodyParser=require("body-parser");
-const {check, validationResult } = require("express-validator");
-const urlencodedParser = bodyParser.urlencoded({ extended:false });
+// const bodyParser=require("body-parser");
+// const {check, validationResult } = require("express-validator");
+// const urlencodedParser = bodyParser.urlencoded({ extended:false });
 
 
 
@@ -13,31 +13,31 @@ function router(nav){
             title:"Library"
         })
     })
-    registerRouter.get("/add",function(req,res){
-        res.render("index",{
-        nav,
-        title:"Library"
-    });
+    // registerRouter.get("/add",function(req,res){
+    //     res.render("index",{
+    //     nav,
+    //     title:"Library"
+    // });
             
         
-    });
-    registerRouter.get("/register",urlencodedParser,[
-    check("username", "Full Name must be 3+ characters long")
-        .exists()
-        .isLength({ min:3}),
-    check("email","Email is not valid")
-        .isEmail()
-        .normalizeEmail()
+    // });
+//     registerRouter.get("/register",urlencodedParser,[
+//     check("username", "Full Name must be 3+ characters long")
+//         .exists()
+//         .isLength({ min:3}),
+//     check("email","Email is not valid")
+//         .isEmail()
+//         .normalizeEmail()
 
-],(req,res)=> {
-    const errors= validationResult(req)
-    if(!errors.isEmpty()){
-        const alert=errors.array()
-        res.render("register",{
-            alert
-        })
-    }
-})
+// ],(req,res)=> {
+//     const errors= validationResult(req)
+//     if(!errors.isEmpty()){
+//         const alert=errors.array()
+//         res.render("register",{
+//             alert
+//         })
+//     }
+// })
 
 // $("#btnLogin").click(function(event) {
     

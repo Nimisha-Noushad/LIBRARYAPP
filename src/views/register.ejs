@@ -114,23 +114,11 @@
                                     <% }) %>
                                     
                                     <% } %>
-                                    <form action="/register" id=loginForm class="form" method="GET">
-                                        <div class="form-group">
-                                            <label for="username">Full Name</label>
-                                            <input type="text" class="form-control"  id="username">
-                                            
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="email">E-mail Address</label>
-                                            <input type="email" class="form-control"  id="email">
-                                           
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" class="form-control" id="password"  >
-                                            
-                                        </div>
-                                       
+                                    <form action="/register" id=loginForm class="form" method="POST">
+                                      Full Name: <input type="text" class="form-control" id="username" name="username">
+                                      E-mail Address : <input type="email" class="form-control" id="email" name="email">
+                                      Password: <input type="password" class="form-control" id="password" name="password">
+                                        <br>
                                         <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Register</button>
                                     </form>
                                 </div>

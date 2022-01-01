@@ -1,6 +1,7 @@
 const express=require("express");
+const Bookdata = require("../model/Bookdata");
 const adminRouter=express.Router();
-
+// const multer=require("multer");
 
 function router(nav){
     adminRouter.get("/",function(req,res){
@@ -10,9 +11,16 @@ function router(nav){
         })
     })
 
-    adminRouter.get("/add",function(req,res){
-        res.send("added");
-            
+    adminRouter.post("/add",function(req,res){
+       var item={
+           title:req.body.title,
+           author:req.body.author,
+           genre:req.body.genre,
+           image:req.body.image
+       }
+        var book=Bookdata(item);
+        book.save();
+        res.redirect("/books")    
         
     });
     return adminRouter;

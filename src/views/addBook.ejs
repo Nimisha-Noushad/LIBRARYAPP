@@ -96,27 +96,17 @@
                         <div class="card">
                             
                             <div class="card-body">
-                                <form method="GET" class="form"  action="/admin/add">
-                                    <div class="form-group">
-                                        <label for="input1">Title</label>
-                                        <input type="text" class="form-control" id="input1"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="input3">Author</label>
-                                        <input type="text" class="form-control" id="input2" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="input3">Genre</label>
-                                        <input type="text" class="form-control" id="input3" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="input5">Image</label>
-                                        <input type="file" class="form-control" id="input4" />
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-success btn-lg float-right">Add Book</button>
-                                    </div>
+                                <form method="POST" class="form"  action="/admin/add">
+                                  Title: <input type="text" class="form-control" name="title">
+
+                                  Author: <input type="text" class="form-control" name="author">
+                                  
+                                  Genre: <input type="text" class="form-control" name="genre">
+                                  
+                                  Image: <input type="file" class="form-control" name= image>
+                                  <br>
+                                  <button type="submit" class="btn btn-success btn-lg float-right">Add Book</button>
+                                  
                                 </form>
                             </div>
                         </div>
